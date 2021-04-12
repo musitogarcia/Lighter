@@ -1,0 +1,24 @@
+body {
+    background-color: black;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    margin-top: 6px;
+    border: none;
+    width: 120px;
+    height: 45px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+}

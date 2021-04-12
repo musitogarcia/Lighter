@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Lighter</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+          <img src="img/lighter-letras.png" height="150" alt="lighter logo">
+        </a>
+      </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+          <li class="nav-item">
+            <a id="boton-agregar" class="nav-link waves-effect waves-light" data-toggle="modal"
+              data-target="#modalAgregar">
+              <i class="fas fa-plus-circle fa-2x animated rotateIn"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+
+    <div class="container text-center" id="divisor-botones"></div>
+
+    <div class="modal fade left" id="fullHeightModalLeft" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-full-height modal-left" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title w-100" id="myModalLabel">Escenas</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col">
+                <button id="escena-luminosa" class="btn peach-gradient btn-lg">
+                  <i class="fas fa-sun mr-5"></i>
+                  Luminosa
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button id="escena-relajante" class="btn aqua-gradient btn-lg">
+                  <i class="fas fa-cloud mr-5"></i>
+                  Relajante
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button id="escena-atenuada" class="btn purple-gradient btn-lg">
+                  <i class="fas fa-star mr-5"></i>
+                  Atenuada
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button id="escena-nocturna" class="btn blue-gradient btn-lg">
+                  <i class="fas fa-moon mr-5"></i>
+                  Nocturna
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalAgregar" tabindex="-1" role="dialog" aria-labelledby="modalAgregar"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-notify modal-info" role="document">
+        <div class="modal-content text-center">
+          <div class="modal-header d-flex justify-content-center">
+            <p class="heading">Registrar habitación</p>
+          </div>
+          <form id="form-luces">
+            <div class="modal-body">
+              <div class="md-form">
+                <input type="text" class="form-control" name="name" required>
+                <label for="name">Nombre</label>
+              </div>
+              <label>Luces</label>
+              <div id="divisor-luces"></div>
+            </div>
+            <div class="modal-footer flex-center">
+              <a type="button" class="btn  btn-info waves-effect" data-dismiss="modal">Cancelar</a>
+              <button type="submit" class="btn  btn-outline-info">Guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalError" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+        <div class="modal-content text-center">
+          <div class="modal-header d-flex justify-content-center">
+            <p class="heading">Error</p>
+          </div>
+          <div class="modal-body">
+            <div class="text-center">
+              <i class="fas fa-times fa-4x animated rotateIn mb-3"></i>
+              <p>Ocurrió un error buscando hubs</p>
+            </div>
+          </div>
+          <div class="modal-footer flex-center">
+            <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">Aceptar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalConectar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-notify modal-warning" role="document">
+        <div class="modal-content text-center">
+          <div class="modal-header d-flex justify-content-center">
+            <p class="heading">Conecta tu hub</p>
+          </div>
+          <div class="modal-body">
+            <div class="text-center">
+              <i class="fas fa-link fa-4x animated rotateIn mb-3"></i>
+              <p>Presiona el botón de tu hub y presiona aceptar o actualiza la página</p>
+            </div>
+          </div>
+          <div class="modal-footer flex-center">
+            <a type="button" class="btn  btn-warning waves-effect" data-dismiss="modal"
+              onclick="actualizar()">Aceptar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript" src="js/jshue.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+
+</body>
+
+</html>
